@@ -1,0 +1,41 @@
+<div class="mt-2 top-bar">
+    <div class="form-group has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control search-input" style="outline: none;" placeholder="Search">
+    </div>
+    <i class="bi bi-plus-square-fill plus-icon"></i>
+    <button class="btn setting-btn mx-3"><i class="bi bi-person-gear"></i></button>
+</div>
+
+<table class="mt-4" style="min-width: 50rem; width: 100%;">
+    <thead>
+        <tr>
+            <th style="width: 4rem">
+                <input class="checkbox" type="checkbox" (change)="selectAll($event)" />
+            </th>
+            <th><i class="bi bi-person-fill"></i> NAME</th>
+            <th><i class="bi bi-telephone-fill"></i> PHONE</th>
+            <th><i class="bi bi-person-vcard-fill"></i> EXTERNAL ID</th>
+            <th><i class="bi bi-person-fill"></i> NUTRITIONIST</th>
+            <th><i class="bi bi-radar"></i> STATUS</th>
+            <th><i class="bi bi-buildings-fill"></i> ORGANIZATION</th>
+            <th><i class="bi bi-calendar-week-fill"></i> PRECOUNSELING DATE</th>
+            <th><i class="bi bi-calendar-week-fill"></i> UPDATED ON</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>
+                <input type="checkbox" [(ngModel)]="u.selected" (change)="onSelect(u)" />
+            </td>
+            <td [ngStyle]="{'color': u.Status === 'Registered' ? 'orange' : '#d00000'}">{{ u.Name }}</td>
+            <td [ngStyle]="{'color': u.Status === 'Registered' ? 'orange' : '#d00000'}">{{ u.Phone }}</td>
+            <td [ngStyle]="{'color': u.Status === 'Registered' ? 'orange' : '#d00000'}">{{ u.ID }}</td>
+            <td [ngStyle]="{'color': u.Status === 'Registered' ? 'orange' : '#d00000'}">{{ u.Nutritionist }}</td>
+            <td [ngStyle]="{'color': u.Status === 'Registered' ? 'orange' : '#d00000'}">{{ u.Status }}</td>
+            <td [ngStyle]="{'color': u.Status === 'Registered' ? 'orange' : '#d00000'}">{{ u.Organization }}</td>
+            <td [ngStyle]="{'color': u.Status === 'Registered' ? 'orange' : '#d00000'}">{{ u.Date }}</td>
+            <td [ngStyle]="{'color': u.Status === 'Registered' ? 'orange' : '#d00000'}">{{ u.Updated }}</td>
+        </tr>
+    </tbody>
+</table>

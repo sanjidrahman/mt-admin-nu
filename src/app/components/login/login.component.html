@@ -1,0 +1,39 @@
+<div class="login-container">
+    <div class="logo-container">
+        <img src="../../../assets/icon.png" alt="NuGenomic Logo" class="logo">
+        <h3 class="img-title">IHAP</h3>
+    </div>
+    <mat-card class="login-card">
+        <div>
+            <h2 class="heading">Login</h2>
+        </div>
+        <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="username" placeholder="Enter your email">
+                    <mat-error *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+                        <div class="error" *ngIf="username?.errors?.['required']">Email is required</div>
+                    </mat-error>
+                    <mat-error *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+                        <div class="error1" *ngIf="username?.errors?.['email']">Invalid email address</div>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="mt-2" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password" placeholder="Enter your password">
+                    <mat-error *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                        <div class="error" *ngIf="password?.errors?.['required']">Password is required</div>
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="button-div">
+                    <a href="">Forgot Password?</a>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Sign
+                        in</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

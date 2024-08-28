@@ -1,0 +1,78 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <img class="img-fluid dash-logo" src="../../../assets/icon2.png" alt="logo">
+    </mat-toolbar>
+    <mat-nav-list>
+      <a href="#" [routerLink]="['/nav/dashboard']" (click)="selectRoute('dashboard')">
+        <div class="fake-button">
+          <i class="bi icon" [ngClass]="selectedRoute === 'dashboard' ? 'bi-grid-fill' : 'bi-grid'"></i>
+          <span class="icon-name" [ngStyle]="{ 'font-weight': selectedRoute === 'dashboard' ? 'bold' : 'normal' }">Dashboard</span>
+        </div>
+      </a>
+      <a href="#" (click)="selectRoute('admin')">
+        <div class="fake-button">
+          <i class="bi icon" [ngClass]="{
+            'bi-person-fill': selectedRoute === 'admin', 
+            'bi-person': selectedRoute !== 'admin'}"></i>
+          <span class="icon-name" [ngStyle]="{ 'font-weight': selectedRoute === 'admin' ? 'bold' : 'normal' }">Admin</span>
+        </div>
+      </a>
+      <a href="#" [routerLink]="['/nav/users']" (click)="selectRoute('user')">
+        <div class="fake-button">
+          <i class="bi icon" [ngClass]="{
+            'bi-people-fill': selectedRoute === 'user', 
+            'bi-people': selectedRoute !== 'user'}"></i>
+          <span class="icon-name" [ngStyle]="{ 'font-weight': selectedRoute === 'user' ? 'bold' : 'normal' }">Users</span>
+        </div>
+      </a>
+      <a href="#">
+        <div class="fake-button">
+          <i class="bi bi-cup icon"></i>
+          <span class="icon-name">Meal Profile</span>
+        </div>
+      </a>
+      <a href="#">
+        <div class="fake-button">
+          <i class="bi bi-wallet icon"></i>
+          <span class="icon-name">Corporate</span>
+        </div>
+      </a>
+      <a href="#">
+        <div class="fake-button">
+          <i class="bi bi-cloud-upload icon"></i>
+          <span class="icon-name">Upload</span>
+        </div>
+      </a>
+      <a href="#">
+        <div class="fake-button">
+          <i class="bi bi-calculator icon"></i>
+          <span class="icon-name">Finance</span>
+        </div>
+      </a>
+      <a href="#">
+        <div class="fake-button">
+          <i class="bi bi-basket2 icon"></i>
+          <span class="icon-name">Products</span>
+        </div>
+      </a>
+      <a href="">
+        <div class="fake-button">
+          <i class="bi bi-calendar3 icon"></i>
+          <span class="icon-name">Operation</span>
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- <mat-toolbar color="primary"> -->
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon color="primary" aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- <span class="span-content">Last updated on: 12/2/2024 3:00pm</span> -->
+    <!-- </mat-toolbar> -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

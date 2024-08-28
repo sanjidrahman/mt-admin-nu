@@ -1,0 +1,59 @@
+.login-card {
+  max-width: 470px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 300;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(112, 118, 112);
+}
+
+.error {
+  margin-top: -20px;
+  margin-left: -15px;
+}
+
+.error1 {
+  margin-top: -42px;
+  margin-left: -15px;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: -3px;
+  position: relative;
+}
+
+.logo {
+  max-width: 90px;
+}
+
+.img-title {
+  font-weight: 500;
+  color: gray;
+}

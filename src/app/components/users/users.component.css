@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap');
+
+.checkbox {
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  color: #0682ff;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+td {
+  font-size: 0.875rem;
+  color: #212529;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+tr.selected {
+  background-color: #d8eefa;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.plus-icon {
+  color: #6161c0;
+  font-size: 29px;
+  margin-top: inherit;
+  cursor: pointer;
+}
+
+.setting-btn {
+  background-color: #e8e0e08a;
+  padding: revert;
+  margin-top: 6px;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.has-search {
+    margin-right: 76px;
+}
+
+.search-input {
+    border-radius: 14px;
+    background-color: #e8e0e08a;
+}
+
+.search-input::placeholder {
+    font-size: small;
+    color: #c7c2c2d7;
+}
